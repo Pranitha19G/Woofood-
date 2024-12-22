@@ -648,10 +648,9 @@ body {
 
 /* Style for the input box */
 .quantity-input {
-  width: 10px; /* Smaller input box width */
   height: 28px; /* Matches button height */
-  text-align: center!important;
-  border: none;
+  text-align: center;
+  /* border: none; */
   font-size: 14px;
   padding: 0;
   margin: 0;
