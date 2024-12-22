@@ -1,0 +1,867 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-image: url("/template/images/bgimage.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  
+}
+
+html, body {
+  height: 100%;
+}
+.change-address-btn{
+  border-style: none;
+  padding: 5px;
+  border-radius: 4px;
+}
+.change-address-btn:hover{
+  background-color: #ffa500;
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: black;
+  padding: 10px 20px;
+}
+
+.navbar-brand img {
+  height: 40px;
+  width: auto;
+}
+
+.nav-link {
+  color: white;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: #ff5722;
+}
+
+/* Cart Icon Styling */
+.cart-container {
+  color: white;
+  font-size: 1rem;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.cart-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.cart-count {
+  font-size: 1rem;
+}
+
+/* Responsive Navbar Adjustments */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cart-container {
+    margin-top: 10px;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-collapse {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cart-container {
+    margin-top: 10px;
+    justify-content: flex-start;
+  }
+}
+
+/* Remove Extra Spacing on Small Screens */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.container-fluid {
+  padding: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.navbar-collapse {
+  width: 100%;
+}
+/* Tabs Popup Styling */
+.unique-popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.unique-popup-content {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  position: relative;
+}
+
+.unique-close-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: black;
+}
+
+.unique-close-icon:hover {
+  color: red;
+}
+
+.unique-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.unique-tab-button {
+  padding: 10px 20px;
+  margin: 0 5px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  background: none;
+  font-size: 16px;
+  color: black;
+}
+
+.unique-tab-button.active {
+  border-bottom: 2px solid red;
+  font-weight: bold;
+}
+
+.unique-tab-content {
+  display: none;
+}
+
+.unique-tab-content.active {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.unique-item {
+  text-align: center;
+  margin: 10px;
+}
+
+.unique-item img {
+  width: 80px;
+  height: 80px;
+  border-radius: 5px;
+}
+
+.unique-item-name {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+
+/* ----------------------------------------------------------------------------------------------------- */
+/* General Container Styles */
+.fullcontainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 20px;
+  flex: 1;
+  align-items: flex-start; /* Align items to the left instead of center */
+  justify-content: flex-start; /* Ensure the content starts from the top */
+}
+
+
+/* Cards */
+.card {
+  background-color: rgb(211, 15, 15) !important;
+  color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 600px; /* Keep the cards responsive */
+  margin: 10px 0; /* Add space between cards */
+}
+
+/* Card Header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.toggle-btn {
+  background: white;
+  color: red;
+  border: none;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Card Content */
+.card-content {
+  background-color: white;
+  display: none; /* Initially hidden */
+  flex-direction: row;
+  gap: 2rem;
+  padding: 10px;
+  color: black;
+  border-top: 1px solid #ddd;
+}
+/* Item Layout */
+.item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap; /* Allow items to wrap */
+  justify-content: flex-start; /* Ensure they align to the left */
+}
+
+
+.item img {
+  width: 80px;
+  height: 80px;
+  border-radius: 4px;
+}
+
+.details {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+
+.details span {
+  font-size: 1rem;
+  color: black;
+}
+
+/* Select Button */
+.select-btn {
+  background-color: orange;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  min-width: 100px; /* Ensure button has enough width */
+  width: auto;
+}
+
+.select-btn:hover {
+  background-color: darkorange;
+}
+/* Address Popup */
+.popup-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-contents {
+  background: #ffffff;
+  padding: 25px 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: popupFadeIn 0.3s ease-in-out;
+}
+
+@keyframes popupFadeIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.popup-contents h3 {
+  margin-top: 0;
+  font-size: 22px;
+  color: #333;
+  text-align: center;
+  font-weight: 600;
+}
+
+.popup-contents label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.popup-contents input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.popup-contents input[type="text"]:focus {
+  outline: none;
+  border-color: #f5a623;
+  box-shadow: 0 0 4px rgba(245, 166, 35, 0.5);
+}
+
+.save-address-btn {
+  display: block;
+  width: 100%;
+  background-color: #f5a623;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.save-address-btn:hover {
+  background-color: #e4941f;
+}
+
+/* Right Section */
+.right-section {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  width: 100%;
+  max-width: 400px;
+  z-index: 10;
+}
+ #order-box {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+} 
+
+
+#order-box h3 {
+  text-align: center;
+  margin: 0 0 10px;
+}
+
+#order-items {
+  margin: 10px 0;
+}
+
+.cart-empty {
+  color: gray;
+  font-style: italic;
+  text-align: center;
+}
+
+.order-summary {
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+.order-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.order-actions button {
+  flex: 1;
+  background: #ffa500;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.order-actions button:hover {
+  background: #ff8c00;
+}
+
+.order-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.order-item .remove-item {
+  cursor: pointer;
+  margin-right: 10px;
+  color: red;
+  font-size: 20px;
+}
+
+/* Mobile & Tablet Adjustments */
+@media (max-width: 768px) {
+  .fullcontainer {
+    margin: 10px;
+    align-items: flex-start; /* Keep the cards left-aligned */
+  }
+ 
+  
+
+  .card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .card-content {
+    gap: 1rem; 
+    flex-direction: column;
+  }
+
+  .item {
+    width: 100%; /* Ensure the items take up the full width */
+    justify-content: flex-start; /* Align the content to the left */
+  }
+
+  .item img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .select-btn {
+    margin-top: 10px;
+    width: 100%; 
+  }
+
+  #order-box {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .right-section {
+    position: fixed;
+    top: 80px;
+    left: 10px;
+    width: calc(100% - 20px);
+    max-width: 350px;
+  }
+
+  .popup-contents {
+    padding: 15px;
+  }
+
+  .popup-contents h3 {
+    font-size: 18px;
+  }
+
+  .popup-contents input[type="text"] {
+    font-size: 12px;
+  }
+
+  .save-address-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+/* Mobile Phone */
+@media (max-width: 480px) {
+ body{
+  background-size: cover;
+  background-repeat: no-repeat;
+ }
+  .card {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .right-section {
+    width: 100%;
+    max-width: none;
+    position: static;
+    margin-top: 3px;
+    
+  }
+
+  #order-box {
+    width: 100%;
+    /* margin-bottom: 50px; */
+  }
+
+  .popup-contents {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .popup-contents h3 {
+    font-size: 16px;
+  }
+
+  .save-address-btn {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
+
+/* /////////////////////////////////popup 1st//////////////////////////////////////////////////////// */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+  position: relative;
+}
+
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.popup-image-container {
+  width: 100%; /* Container takes up the full width */
+  height: 200px; /* Fixed height for consistency */
+  overflow: hidden; /* Hide any part of the image that overflows */
+  display: flex;
+  justify-content: center; /* Center the image horizontally */
+  align-items: center; /* Center the image vertically */
+  border-radius: 10px; /* Optional: adds rounded corners */
+}
+
+.popup img {
+  width: 100%; /* Image will fill the container width */
+  height: 100%; /* Image will fill the container height */
+  object-fit: cover; /* Ensures image covers the container without distortion */
+  object-position: center; /* Ensures the image is centered */
+}
+.popup-price {
+  margin: 8px 0;
+}
+/* Container for the quantity controls */
+.quantity-container {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  overflow: hidden; /* Ensures the container doesn't overflow */
+  width: fit-content; /* Automatically adjusts to content size */
+  background-color: #f8f8f8;
+}
+
+/* Style for the buttons */
+.quantity-btn {
+  background-color: #666;
+  color: white;
+  border: none;
+  width: 28px;
+  height: 28px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.quantity-btn:hover {
+  background-color: #555;
+}
+
+/* Style for the input box */
+.quantity-input {
+  width: 10px; /* Smaller input box width */
+  height: 28px; /* Matches button height */
+  text-align: center!important;
+  border: none;
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  appearance: textfield; /* Removes number arrows */
+}
+
+/* Remove spinner arrows for modern browsers */
+.quantity-input::-webkit-inner-spin-button,
+.quantity-input::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+/* Subtle hover effect for the container */
+.quantity-container:hover {
+  border-color: #888;
+}
+
+
+/* c */
+.popup-add-to-cart {
+  background-color: orange;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup-add-to-cart:hover {
+  background-color: darkorange;
+}
+
+/* //////////////////////////////////add-to-cart//////////////////////////////////////////////////// */
+#woofood-footer {
+  background-color: #000;
+  color: #fff;
+  margin-top: 27%;
+  padding: 20px 0; /* Add padding for spacing */
+  text-align: center; /* Center align text by default */
+}
+
+#woofood-footer .footer-heading {
+  font-size: 1.2rem;
+  color: orange;
+}
+
+#woofood-footer .footer-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+#woofood-footer .footer-links {
+  padding-left: 0;
+  list-style: none;
+  text-align: center; /* Center align links by default */
+}
+
+#woofood-footer .footer-links li {
+  margin-bottom: 10px;
+}
+
+#woofood-footer .footer-link:hover {
+  color: orange;
+  text-decoration: underline;
+}
+
+#woofood-footer .social-links i {
+  font-size: 1.5rem;
+  margin-right: 10px;
+  transition: color 0.3s;
+}
+
+#woofood-footer .social-links i:hover {
+  color: orange;
+}
+
+#woofood-footer .footer-divider {
+  border-color: #444;
+  margin: 20px 0; /* Space around the divider */
+}
+
+#woofood-footer .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Adjustments for 1024px screens */
+@media (max-width: 1024px) {
+  /* Footer adjustments */
+  #woofood-footer .row {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  #woofood-footer .footer-links {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  #woofood-footer .footer-heading {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  #woofood-footer .footer-description {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+  }
+
+  #woofood-footer .social-links {
+    justify-content: center;
+    margin-top: 10px;
+  }
+ 
+  #woofood-footer .social-links i {
+    font-size: 1.3rem;
+    margin-right: 8px;
+  }
+
+  /* Cards and Order Box adjustments for 1024px screens */
+  .card {
+    width: 57%; /* 2 cards per row */
+    margin: 1%;
+  }
+
+  .order-box {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  /* Ensure responsive grid for the cards in the container */
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 15px; /* Add margin for spacing */
+  }
+
+  /* Stack items vertically for small screens and tablets */
+  .card-container .card {
+    width: 100%; /* Full width on small screens */
+    margin-bottom: 20px;
+  }
+
+  /* Order box layout */
+  .order-box {
+    width: 100%;
+    padding: 20px;
+    margin-top: 30px;
+    box-sizing: border-box;
+  }
+}
+
+/* Adjusting footer for 768px screens */
+@media (max-width: 768px) {
+  .card {
+    width: 100%; /* Stack all cards vertically */
+    margin: 10px 0;
+  }
+
+  /* Footer adjustments for smaller screens */
+  #woofood-footer .footer-heading {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  #woofood-footer .footer-description {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+  }
+
+  /* Adjust padding and margin for smaller devices */
+  #woofood-footer {
+    padding: 15px;
+    margin-top: 5%;
+  }
+
+  /* Adjust order box for smaller screens */
+  .order-box {
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+  }
+}
+@media (max-width: 480px) {
+  #woofood-footer .footer-heading {
+    font-size: 1rem; /* Smaller font size */
+  }
+
+  #woofood-footer .footer-description {
+    font-size: 0.8rem; /* Smaller description text */
+  }
+
+  #woofood-footer .social-links i {
+    font-size: 1rem; /* Even smaller icons */
+    margin-right: 6px;
+  }
+
+  #woofood-footer .footer-links li {
+    margin-bottom: 3px; /* Tighter spacing */
+  }
+
+  #woofood-footer {
+    padding: 10px;
+    margin-top: 10%; /* Adjust top margin for mobile devices */
+  }
+}

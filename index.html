@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script type="module" src="./js files/firebase.js"></script>
+    <style>
+        /* Centering container to align forms in the center */
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f2f5;
+            font-family: Arial, sans-serif;
+        }
+        form {
+            width: 100%;
+            max-width: 400px;
+            padding: 2rem;
+            border-radius: 8px;
+            background-color: #ffffff;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            display: none;
+            /* Hide by default */
+        }
+
+        /* Show the active form */
+        form.active {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-title {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            color: #495057;
+        }
+
+        .form-label {
+            font-weight: bold;
+            color: #495057;
+        }
+
+        .form-text {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            border: 1px solid #ced4da;
+            box-shadow: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #80bdff;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+
+        button {
+            width: 100%;
+            padding: 0.75rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:active {
+            background-color: #004085;
+        }
+
+        .links {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .links button {
+            background: none;
+            border: none;
+            color: #007bff;
+            font-size: 1rem;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .links button:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center-container">
+        <!-- Sign Up Form -->
+        <form id="signUpForm" class="active">
+            <h1 class="form-title">Sign Up</h1>
+            <div class="mb-3">
+                <label for="remail" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="remail" required>
+            </div>
+            <div class="mb-3">
+                <label for="rpassword" class="form-label">Password</label>
+                <input type="password" class="form-control" id="rpassword" required>
+            </div>
+            <button type="submit" id="btn1">Sign Up</button>
+            <div class="links">
+                <p>Already Have an Account?</p>
+                <button id="signInButton">Sign In</button>
+            </div>
+        </form>
+
+        <!-- Sign In Form -->
+        <form id="signInForm">
+            <h1 class="form-title">Sign In</h1>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <a href="#">Recover Password</a>
+            <button type="submit" id="btn2">Sign In</button>
+            <div class="links">
+                <p>Don't have an account yet?</p>
+                <button id="signUpButton">Sign Up</button>
+            </div>
+        </form>
+    </div>
+    <script src="./js files/form.js">   
+    </script>
+</body>
+
+</html>

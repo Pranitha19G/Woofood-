@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>woofood</title>
+  <link rel="stylesheet" href="./cs files/main.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+ <!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <!-- Logo -->
+    <a class="navbar-brand" href="#">
+      <img src="./images/logo.png" alt="WooFood Logo">
+    </a>
+
+    <!-- Toggler for Mobile View -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#" onclick="openMenuTabsPopup()">Menu Style</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#woofood-footer">Contact</a>
+        </li>
+      </ul>
+
+      <!-- Cart Icon -->
+      <div class="cart-container d-flex align-items-center">
+        <span class="cart-icon" onclick="openCartPage()">🛒</span>
+        <span class="cart-count">0</span> item(s)
+      </div>
+    </div>
+  </div>
+</nav>
+<!---------------------------------------------main tabs----------------------------------------------->
+  <div id="uniqueMenuTabsPopup" class="unique-popup-container" style="display: none;">
+    <div class="unique-popup-content">
+      <span class="unique-close-icon" onclick="closeUniqueMenuTabsPopup()">✖</span>
+      <h2>Menu Tabs</h2>
+      <div class="unique-tabs">
+        <button class="unique-tab-button active" onclick="showUniqueTab('burger')">Burger</button>
+        <button class="unique-tab-button" onclick="showUniqueTab('coffee')">Coffee</button>
+        <button class="unique-tab-button" onclick="showUniqueTab('pizza')">Pizza</button>
+      </div>
+      <div id="burger" class="unique-tab-content active">
+        <div class="unique-item">
+          <img src="./images/kfc-box-meals-prices-1024x576.jpg" alt="Box Meal" class="unique-item-image">
+          <p class="unique-item-name">Box Meal</p>
+        </div>
+        <div class="unique-item">
+          <img src="./images/Bacon-Burger.jpg" alt="Extreme Bacon Burger" class="unique-item-image">
+          <p class="unique-item-name">Extreme Bacon Burger</p>
+        </div>
+      </div>
+      <div id="coffee" class="unique-tab-content">
+        <div class="unique-item">
+          <img src="./images/cofee.jpg" alt="Cappuccino" class="unique-item-image">
+          <p class="unique-item-name">Cappuccino</p>
+        </div>
+        <div class="unique-item">
+          <img src="./images/Cappuccino-Coffee.jpg" alt="Espresso" class="unique-item-image">
+          <p class="unique-item-name">Espresso</p>
+        </div>
+      </div>
+      <div id="pizza" class="unique-tab-content">
+        <div class="unique-item">
+          <img src="./images/pizza-stock.jpg" alt="Pizza Special" class="unique-item-image">
+          <p class="unique-item-name">Pizza Special</p>
+        </div>
+        <div class="unique-item">
+          <img src="./images/gn-gift_guide_variable_c.jpg" alt="Pizza Variable" class="unique-item-image">
+          <p class="unique-item-name">Pizza Special Variable</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ---------------------------------------------------container----------------------------------------------------------->
+  <div class="totalcontainer" id="home">
+    <div class="fullcontainer">
+      <!-- left side Card -->
+      <!-- Coffee Card -->
+      <div class="card">
+        <div class="card-header">
+          <span>Coffee</span>
+          <button class="toggle-btn" onclick="toggleCard(this)">+</button>
+        </div>
+        <div class="card-content">
+          <div class="item">
+            <img src="./images/cofee.jpg" alt="Espresso">
+            <div class="details">
+              <span>Espresso</span>
+              <span>$2.50</span>
+              <button class="select-btn">Select</button>
+            </div>
+          </div>
+          <div class="item">
+            <img src="./images/Cappuccino-Coffee.jpg" alt="Cappuccino">
+            <div class="details">
+              <span>Cappuccino</span>
+              <span>$3.00</span>
+              <button class="select-btn">Select</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Burger Card -->
+      <div class="card">
+        <div class="card-header">
+          <span>Burger</span>
+          <button class="toggle-btn" onclick="toggleCard(this)">+</button>
+        </div>
+        <div class="card-content">
+          <div class="item">
+            <img src="./images/kfc-box-meals-prices-1024x576.jpg" alt="Box Meal">
+            <div class="details">
+              <span>Box Meal</span>
+              <span>$9.00</span>
+              <button class="select-btn">Select</button>
+            </div>
+          </div>
+          <div class="item">
+            <img src="./images/Bacon-Burger.jpg" alt="Extreme Bacon Burger">
+            <div class="details">
+              <span>Extreme Bacon Burger</span>
+              <span>$10.00</span>
+              <button class="select-btn">Select</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pizza Card -->
+      <div class="card">
+        <div class="card-header">
+          <span>Pizza</span>
+          <button class="toggle-btn" onclick="toggleCard(this)">+</button>
+        </div>
+        <div class="card-content">
+          <div class="item">
+            <img src="./images/pizza-stock.jpg" alt="Pizza Special">
+            <div class="details">
+              <span>Pizza Special</span>
+              <span>$5.00</span>
+              <button class="select-btn">Select</button>
+            </div>
+          </div>
+          <div class="item">
+            <img src="./images/pizza special.jpg" alt="Pizza Special Variable">
+            <div class="details">
+              <span>Pizza Special Variable</span>
+              <span>$5.40 - $11.70</span>
+              <button class="select-btn">Select</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- address scetionnnnnn -->
+      <div id="popup-address-container" class="popup-container">
+        <div class="popup-contents">
+          <button class="popup-close-btn" onclick="closeAddressPopup()">×</button>
+          <h3>Enter Your Address</h3>
+          <label for="popup-name-input">Full Name</label>
+          <input type="text" id="popup-name-input" placeholder="Enter full name" />
+          
+          <label for="popup-address-input">Address</label>
+          <input type="text" id="popup-address-input" placeholder="Enter your address" />
+          
+          <label for="popup-city-input">City</label>
+          <input type="text" id="popup-city-input" placeholder="Enter city" />
+          
+          <label for="popup-zipcode-input">Zip Code</label>
+          <input type="text" id="popup-zipcode-input" placeholder="Enter zip code" />
+          
+          <button class="save-address-btn" onclick="updateAddressInOrderBox()">Save Address</button>
+        </div>
+      </div>
+      
+      <div class="right-section">
+        <div id="order-box">
+          <h3>MY ORDER</h3>
+          <p id="address-note"><strong>Note:</strong> You have not completed your address yet.</p>
+          <button id="address-btn" onclick="openAddressPopup()">Complete your Address</button>
+          <div id="delivery-address" data-name="" data-address="" data-city="" data-zip="" style="display: none;"></div>
+          <div id="order-items">
+            <p class="cart-empty">No products in the cart.</p>
+          </div>
+          <div class="order-summary">
+            <p>Subtotal: <span id="subtotal">$0.00</span></p>
+          </div>
+          <div class="order-actions">
+            <button class="view-cart-btn" onclick="openCartPage()">View Cart</button>
+            <button class="checkout-btn" onclick="checkout()">Checkout</button>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+    
+      
+  <!----------------------------------------------------------------------popup of 1st---------------------------------------------------------- -->
+  <div id="item-popup" class="popup" style="display: none;">
+    <div class="popup-content">
+      <span class="popup-close" onclick="closePopup()">×</span>
+      <h2 id="popup-title">Item Name</h2>
+      <div class="popup-image-container">
+        <img id="popup-image" src="" alt="Item Image" />
+      </div>
+      <div id="popup-price" class="popup-price">$0.00</div>
+      <div id="popup-description">Item Description</div>
+      <textarea id="popup-comments" placeholder="Additional Comments..."></textarea>
+      <div class="quantity-container">
+        <button onclick="decreaseQuantity()"  class="quantity-btn minus-btn">-</button>
+        <input id="quantity-input" type="number" value="1" min="1" />
+        <button onclick="increaseQuantity()" class="quantity-btn plus-btn">+</button>
+      </div>
+      <button id="add-to-cart" class="popup-add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+  </div>
+  <!-- ..................................................footer........................................................ -->
+  <footer id="woofood-footer" class="bg-black text-white py-5">
+    <div class="container">
+      <div class="row">
+        <!-- Logo and About Section -->
+        <div class="col-md-4 mb-4">
+          <div class="footer-logo">
+            <img src="./images/logo.png" alt="WooFood Logo" class="mb-3" style="height: 50px;">
+          </div>
+          <p class="footer-description">
+            WooFood is your ultimate destination for delicious food delivered right to your doorstep. Enjoy a wide variety of flavors crafted just for you.
+          </p>
+        </div>
+  
+        <!-- Quick Links Section -->
+        <div class="col-md-4 mb-4">
+          <h5 class="footer-heading text-orange mb-3">Quick Links</h5>
+          <ul class="footer-links list-unstyled">
+            <li><a href="#" class="footer-link text-decoration-none text-white">Home</a></li>
+            <li><a href="#" class="footer-link text-decoration-none text-white">Menu</a></li>
+            <li><a href="#" class="footer-link text-decoration-none text-white">Cart</a></li>
+            <li><a href="#" class="footer-link text-decoration-none text-white">Checkout</a></li>
+            <li><a href="#" class="footer-link text-decoration-none text-white">Contact Us</a></li>
+          </ul>
+        </div>
+  
+        <!-- Contact and Social Links Section -->
+        <div class="col-md-4">
+          <h5 class="footer-heading text-orange mb-3">Get in Touch</h5>
+          <p><i class="bi bi-telephone-fill"></i> +1 234 567 890</p>
+          <p><i class="bi bi-envelope-fill"></i> support@woofood.com</p>
+          <p><i class="bi bi-geo-alt-fill"></i> 123 Food Street, Gourmet City, USA</p>
+          <div class="social-links mt-3">
+            <a href="#" class="social-link text-white me-3"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-link text-white me-3"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="social-link text-white me-3"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-link text-white"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+  
+      <hr class="footer-divider my-4" style="border-color: #444;">
+      <div class="text-center" id="centertext">
+        <p class="mb-0" >&copy; 2024 WooFood. Crafted with ❤️ by WooFood Team. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <!------------------------------------------------------------footer ends------------------------------------- -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="./js files/main.js"></script>
+</body>
+
+</html>
