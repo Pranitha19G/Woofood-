@@ -13,7 +13,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background-image: url(./images/bgimage.jpg);
+  background-image: url(/template/images/bgimage.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
