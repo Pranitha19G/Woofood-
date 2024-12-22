@@ -41,7 +41,7 @@ async function signIn(email, password) {
   try {
     await signInWithEmailAndPassword(auth, email, password);
     alert("Sign in successful!");
-    window.location.href='index.html';
+    window.location.href='main.html';
   } catch (error) {
     console.error("Sign-in error:", error);
     alert(error.message);
@@ -58,4 +58,9 @@ document.getElementById("btn1").addEventListener("click", (e) => {
 document.getElementById("btn2").addEventListener("click", (e) => {
   e.preventDefault();
   signIn(document.getElementById("email").value, document.getElementById("password").value);
+});
+document.getElementById("guest").addEventListener("click",() => {
+  window.location.href="main.html";
+  alert("Now you can access as a guest");
+
 });
