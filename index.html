@@ -7,125 +7,109 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script type="module" src="./js files/firebase.js"></script>
     <style>
-        
-        /* Centering container to align forms in the center */
+        .body {
+            background-image: url("./images/loginimage.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
         .center-container {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f0f2f5;
-            font-family: Arial, sans-serif;
-        }
-        form {
-            width: 100%;
-            max-width: 400px;
+            max-width: 500px;
+            margin: auto;
             padding: 2rem;
-            border-radius: 8px;
-            background-color: #ffffff;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-            display: none;
-            /* Hide by default */
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            color: #333333;
         }
 
-        /* Show the active form */
+        form {
+            width: 100%;
+            max-width: 360px;
+            padding: 1.5rem;
+            border-radius: 16px;
+            background-color: #F0F4F8;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+            display: none;
+        }
         form.active {
             display: flex;
             flex-direction: column;
         }
-
         .form-title {
             text-align: center;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: bold;
             margin-bottom: 1.5rem;
-            color: #495057;
+            color: #007BFF;
         }
-
-        .form-label {
-            font-weight: bold;
-            color: #495057;
-        }
-
-        .form-text {
-            font-size: 0.9rem;
-            color: #6c757d;
-        }
-
         input[type="email"],
         input[type="password"] {
             width: 100%;
             padding: 0.75rem;
             margin-bottom: 1rem;
-            border-radius: 4px;
-            border: 1px solid #ced4da;
-            box-shadow: none;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 8px;
+            border: 1px solid #CED4DA;
+            transition: all 0.3s ease;
         }
-
         input[type="email"]:focus,
         input[type="password"]:focus {
-            border-color: #80bdff;
-            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+            border-color: #007BFF;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
         }
-
         button {
             width: 100%;
-            padding: 0.75rem;
+            padding: 0.8rem;
             font-size: 1rem;
             border: none;
-            border-radius: 4px;
-            background-color: #007bff;
+            border-radius: 8px;
+            background-color: #007BFF;
             color: white;
             cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        #guest{
-            width: 50%;
-            padding: 0.75rem;
-            font-size: 1rem;
-            border: none;
-            border-radius: 4px;
-            background-color: #007bff;
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        #guest:hover{
-            background-color: #0056b3;
-            text-decoration: none;
-
+            transition: all 0.3s ease;
         }
         button:hover {
-            background-color: #0056b3;
+            background-color: #0056B3;
+            transform: translateY(-2px);
+            box-shadow: 0px 4px 10px rgba(0, 86, 179, 0.3);
         }
-
         button:active {
-            background-color: #004085;
+            background-color: #003C7E;
+            transform: translateY(1px);
+        }
+        #guest {
+            width: 40%;
+            color: white;
+            background-color: #0056B3;
         }
 
+        #guest:hover {
+            background-color: #003C7E;
+        }
         .links {
             text-align: center;
             margin-top: 1rem;
+            color: #007BFF;
         }
-
         .links button {
             background: none;
             border: none;
-            color: #007bff;
+            color: #007BFF;
             font-size: 1rem;
             cursor: pointer;
             padding: 0;
+            transition: color 0.3s ease;
         }
-
         .links button:hover {
-            color: #0056b3;
+            color: #0056B3;
             text-decoration: underline;
         }
     </style>
 </head>
-
-<body>
+<body class="body">
     <div class="center-container">
         <!-- Sign Up Form -->
         <form id="signUpForm" class="active">
@@ -144,9 +128,7 @@
                 <button id="signInButton">Sign In</button>
                 <button id="guest">GuestEntry</button>
             </div>
-            
         </form>
-
         <!-- Sign In Form -->
         <form id="signInForm">
             <h1 class="form-title">Sign In</h1>
@@ -157,12 +139,11 @@
             <div class="links">
                 <p>Don't have an account yet?</p>
                 <button id="signUpButton">Sign Up</button>
-                
+
             </div>
         </form>
     </div>
-    <script src="./js files/form.js">   
+    <script src="./js files/form.js">
     </script>
 </body>
-
 </html>
