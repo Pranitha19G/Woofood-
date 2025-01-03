@@ -56,18 +56,31 @@ function submitOrder(event) {
         return;
     }
 
-    // Process the order and clear the cart
-    localStorage.removeItem("cart");
-    alert("Order placed successfully! Thank you for shopping.");
-    updateCartCount();
+ // Process the order and clear the cart
+ localStorage.removeItem("cart");
+ localStorage.setItem("orderPlaced", "true");  // Flag indicating order has been placed
+ alert("Order placed successfully! Thank you for shopping.");
+ updateCartCount();
+
+ // Only open the order page if the order hasn't been placed already
+ if (localStorage.getItem("orderPlaced") === "true") {
+     window.open('orderpage.html');
+     localStorage.removeItem("orderPlaced"); // Clear the flag after opening the order page
+ }
 }
 
 // Initialize page
 updateCartCount();
 updateOrderSummary();
 
+// Check if order has been placed
+if (localStorage.getItem("orderPlaced") === "true") {
+    alert("Your order has already been placed. Redirecting to order page...");
+    localStorage.removeItem("orderPlaced"); // Clear the flag
+    window.location.href = 'orderpage.html'; // Automatically redirect to the order page
+}
+
 // Listen to changes in payment method
 document.querySelectorAll('input[name="payment"]').forEach(input => {
     input.addEventListener('change', updateOrderSummary);
 });
-

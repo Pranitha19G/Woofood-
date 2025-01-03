@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order placed successfully</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 160px;
+        }
+        .spinner {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #3498db;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        #loading-container, #success-container {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-container">
+        <div class="spinner"></div>
+        <p>Processing your order...</p>
+    </div>
+
+    <!-- Success Screen -->
+    <div id="success-container">
+        <p style="font-size: 2rem; color: #800046;">✅🎉 Hooray! Your Order is Confirmed</p>
+        <p>📩 Check your inbox for the tracking details and confirmation.</p>
+        <p>✨ We appreciate you! See you again soon! 🌟</p>
+    </div>
+
+    <script>
+        // Show loading screen initially
+        document.getElementById('loading-container').style.display = 'block';
+
+        // After 3 seconds, switch to success screen
+        setTimeout(() => {
+            document.getElementById('loading-container').style.display = 'none';
+            document.getElementById('success-container').style.display = 'block';
+        }, 3000);
+    </script>
+</body>
+</html>
